@@ -1,2 +1,3 @@
 .vscode
 __pycache__
+/smart-farm-template/node_modules
