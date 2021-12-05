@@ -21,7 +21,8 @@ app = Flask(__name__, static_folder='smart-farm-template/build', static_url_path
 
 CORS(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost/smart_farm'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost/smart_farm'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yjxcplejvfybdg:748db9d06f70087052fb58867f70bfc0d6dc3c374448240d670950c88669a8fc@ec2-3-230-219-251.compute-1.amazonaws.com:5432/d1cr3a7ssrfctr'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -198,5 +199,5 @@ def index():
     return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run()
