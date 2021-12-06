@@ -17,7 +17,7 @@ import statistics
 import requests
 import numpy as np
 
-app = Flask(__name__, static_folder='smart-farm-template/build', static_url_path='')
+app = Flask(__name__)
 
 CORS(app)
 
@@ -196,7 +196,7 @@ def diseasePredict():
 
 @app.route('/')
 def index():
-    return send_from_directory(app.static_folder, 'index.html')
+    return 'hello'
 
 if __name__ == '__main__':
     app.debug = False
